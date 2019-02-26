@@ -2,13 +2,18 @@
 <html>
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
-  <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
-  	<a-marker preset="hiro">
-            <a-box position='0 0.5 0' material='color: black;'></a-box>
-  	</a-marker>
-  	<a-entity camera obj-model=”obj: url(/archive/scene.gltf); 
-            mtl: url(/archive/scene.gltf)”></a-entity>
-    </a-scene>
-  </body>
+
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+   <a-assets>
+    <a-asset-item id="face" src="archive/scene.gltf"></a-asset-item>
+    </a-assets>
+     <a-marker-camera preset='hiro'>
+
+      <a-entity gltf-model-next="#face"></a-entity>
+
+    </a-marker-camera>
+
+  </a-scene> 
+</body> 
 </html>
