@@ -5,16 +5,11 @@
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.10.0/dist/aframe-extras.min.js"></script>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-   <a-assets>
-    <a-asset-item id="face" src="archive/scene.gltf"></a-asset-item>
-    </a-assets>
-     <a-marker-camera preset='hiro'>
-
-      <a-entity gltf-model="#face"></a-entity>
-
-    </a-marker-camera>
-
-  </a-scene> 
-</body> 
+    <a-scene embedded arjs>
+  	<a-marker preset="hiro">
+            <a-box position='0 0.5 0' material='color: black;'></a-box>
+  	</a-marker>
+  	<a-entity camera></a-entity>
+    </a-scene>
+  </body>
 </html>
